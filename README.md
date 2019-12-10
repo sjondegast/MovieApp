@@ -1,2 +1,0 @@
-# MovieApp
-MovieApp Course React
