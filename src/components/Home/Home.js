@@ -34,6 +34,7 @@ class Home extends Component {
   }
 
   searchItems = searchTerm => {
+    console.log(searchTerm);
     let endpoint = "";
     this.setState({
       movies: [],
@@ -91,7 +92,7 @@ class Home extends Component {
             />
           </div>
         ) : null}
-        <SearchBar />
+        <SearchBar callback={this.searchItems} />
         <FourColGrid />
         <Spinner />
         <LoadMoreBtn />
