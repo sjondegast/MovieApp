@@ -2,11 +2,9 @@ import React, { Component } from "react";
 import {
   API_URL,
   API_KEY,
-  // eslint-disable-next-line
   IMAGE_BASE_URL,
   // eslint-disable-next-line
   POSTER_SIZE,
-  // eslint-disable-next-line
   BACKDROP_SIZE
 } from "../../config";
 
@@ -50,10 +48,11 @@ class Home extends Component {
     this.fetchItems(endpoint);
   };
 
-  fetchItems(endpoint) {
+  fetchItems = endpoint => {
     fetch(endpoint)
       .then(result => result.json())
       .then(result => {
+        console.log(result);
         this.setState({
           movies: [...this.state.movies, ...result.results],
           heroImage: this.state.heroImage || result.results[0],
@@ -62,11 +61,20 @@ class Home extends Component {
           totalPages: result.total_pages
         });
       });
-  }
+  };
+
   render() {
     return (
-      <div>
-        <HeroImage />
+      <div className="rmdb-home">
+        {this.state.heroImage ? (
+          <div>
+            <HeroImage
+              image={`${IMAGE_BASE_URL}${BACKDROP_SIZE}${this.state.heroImage.backdrop_path}`}
+              title={this.state.heroImage.original_title}
+              text={this.state.heroImage.overview}
+            />
+          </div>
+        ) : null}
         <SearchBar />
         <FourColGrid />
         <Spinner />
