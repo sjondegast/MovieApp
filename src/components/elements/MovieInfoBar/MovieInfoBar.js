@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-expressions */
 import React from "react";
 import FontAwesome from "react-fontawesome";
 import { calcTime, convertMoney } from "../../../helpers";
