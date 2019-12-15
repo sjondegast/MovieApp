@@ -28,7 +28,6 @@ class Movie extends Component {
     fetch(endpoint)
       .then(result => result.json())
       .then(result => {
-        console.log(result);
         if (result.status_code) {
           this.setState({ loading: false });
         } else {
@@ -78,7 +77,7 @@ class Movie extends Component {
             </FourColGrid>
           </div>
         ) : null}
-        {this.state.actors && !this.state.loading ? (
+        {this.state.actors && this.state.loading ? (
           <h1>No Movie Found!</h1>
         ) : null}
         {this.state.loading ? <Spinner /> : null}
