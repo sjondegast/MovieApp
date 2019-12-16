@@ -45,6 +45,8 @@ const tmdb = {
     console.log(response);
   }
 };
+// tv is also working!
+// make a method to get the data, all other methods will use this just like the generateUrl method!
 
 export { tmdb };
 export default Api;

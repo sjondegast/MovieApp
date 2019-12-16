@@ -39,7 +39,7 @@ class Home extends Component {
     Api();
     fetchData(endpoint);
     getMovieData(endpoint);
-    tmdb.getPopularMovies({ type: "movie/", filter: "popular?" });
+    tmdb.getPopularMovies({ type: "tv/", filter: "popular?" });
   }
 
   searchItems = searchTerm => {
