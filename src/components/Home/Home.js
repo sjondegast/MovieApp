@@ -8,6 +8,11 @@ import {
   BACKDROP_SIZE
 } from "../../config";
 
+import Api, {
+  fetchData,
+  getMovieData,
+  tmdb
+} from "../../services/tmdb-api-service";
 import HeroImage from "../elements/HeroImage/HeroImage";
 import SearchBar from "../elements/SearchBar/SearchBar";
 import FourColGrid from "../elements/FourColGrid/FourColGrid";
@@ -31,10 +36,13 @@ class Home extends Component {
     this.setState({ loading: true });
     const endpoint = `${API_URL}movie/popular?api_key=${API_KEY}&language=en-US&page=1`;
     this.fetchItems(endpoint);
+    Api();
+    fetchData(endpoint);
+    getMovieData(endpoint);
+    tmdb.getPopularMovies({ type: "movie/", filter: "popular?" });
   }
 
   searchItems = searchTerm => {
-    console.log(searchTerm);
     let endpoint = "";
     this.setState({
       movies: [],
