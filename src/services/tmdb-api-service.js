@@ -42,7 +42,7 @@ const tmdb = {
     // };
     const url = tmdb.generateUrl({ params });
     const response = await (await fetch(url)).json();
-    console.log(response);
+    return response;
   }
 };
 // tv is also working!
