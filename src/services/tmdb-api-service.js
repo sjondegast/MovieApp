@@ -52,17 +52,3 @@ export { tmdb };
 export default Api;
 
 // const endpoint = `${API_URL}movie/popular?api_key=${API_KEY}&language=en-US&page=1`;
-
-// fetchItems = endpoint => {
-//   fetch(endpoint)
-//     .then(result => result.json())
-//     .then(result => {
-//       this.setState({
-//         movies: [...this.state.movies, ...result.results],
-//         heroImage: this.state.heroImage || result.results[0],
-//         loading: false,
-//         currentPage: result.page,
-//         totalPages: result.total_pages
-//       });
-//     });
-// };
