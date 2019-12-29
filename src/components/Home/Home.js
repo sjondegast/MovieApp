@@ -8,6 +8,7 @@ import {
   BACKDROP_SIZE
 } from "../../config";
 
+import "../../services/tmdb.factory.function";
 import { tmdb } from "../../services/tmdb-api-service";
 
 import HeroImage from "../elements/HeroImage/HeroImage";
