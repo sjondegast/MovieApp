@@ -47,7 +47,7 @@ bower_components
 .lock-wscript
 
 # Compiled binary addons (https://nodejs.org/api/addons.html)
-build/Release
+# build/Release
 
 # Dependency directories
 node_modules/
@@ -88,7 +88,7 @@ typings/
 .nuxt
 
 # react / gatsby 
-public/
+# public/
 
 # vuepress build output
 .vuepress/dist
